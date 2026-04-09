@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAYURA - Motivation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="contact.html">VAYURA</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Activities</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Maps</a></li>
+            <li><a href="#">Challenges</a></li>
+            <li><a href="#">Subscription</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="btn-outline">Log In</button>
+        </div>
+    </nav>
+
+    <main class="motivation-container">
+        <div class="image-column left-image" style="background-image: url('assets/forest_bikers.png');">
+            <!-- Left Image: Forest Bikers -->
+        </div>
+
+        <div class="center-column">
+            <div class="auth-box">
+                <h1>Motivation</h1>
+                <p class="subtitle">Track your progress and cheer each other on.<br>Join over 100 million active people for free.</p>
+
+                <div class="auth-section">
+                    <p class="member-text">Already a Member? <a href="#" class="link-login" id="loginToggle">Log In</a></p>
+
+                    <div id="signupForm">
+                        <button class="btn-google">
+                            <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google Logo">
+                            Sign Up With Google
+                        </button>
+                        <button class="btn-email" id="signupEmailBtn">Sign Up With Email</button>
+                    </div>
+
+                    <div id="loginForm" class="hidden">
+                        <input type="email" placeholder="Email Address" class="text-input">
+                        <input type="password" placeholder="Password" class="text-input">
+                        <button class="btn-email" id="submitLoginBtn">Log In to Platform</button>
+                    </div>
+
+                    <p class="terms-text">By continuing, you are agreeing to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-column right-image" style="background-image: url('assets/sunset_runner.png');">
+            <!-- Right Image: Sunset Runner -->
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

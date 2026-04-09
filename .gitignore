@@ -1,0 +1,37 @@
+# env
+.env
+*.env
+healthtwin/.env
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# venv
+.venv/
+venv/
+env/
+
+# mac
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# logs
+*.log
+
+# build
+dist/
+build/
+
+# data (optional large files)
+*.sqlite
+*.db
+
+# streamlit secrets
+.streamlit/secrets.toml

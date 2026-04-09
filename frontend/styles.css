@@ -1,0 +1,326 @@
+:root {
+    --primary-color: #2e6274; /* teal from logo */
+    --accent-orange: #d95311;
+    --red-bg: #cc2527;
+    --text-dark: #222;
+    --text-light: #666;
+    --bg-light: #fafafa;
+    --white: #ffffff;
+    --gray-border: #ddd;
+    --font-family: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--white);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 4rem;
+    background-color: var(--white);
+    border-bottom: 1px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.btn-outline {
+    padding: 0.6rem 1.5rem;
+    border: 1px solid var(--text-dark);
+    background-color: transparent;
+    border-radius: 6px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--text-dark);
+    color: var(--white);
+}
+
+/* ==================== MOTIVATION PAGE ==================== */
+.motivation-container {
+    display: flex;
+    height: calc(100vh - 85px);
+}
+
+.image-column {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.center-column {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 4rem;
+    text-align: center;
+}
+
+.auth-box h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    line-height: 1.5;
+}
+
+.member-text {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.link-login {
+    color: var(--accent-orange);
+    font-weight: 600;
+}
+
+.link-login:hover {
+    text-decoration: underline;
+}
+
+.btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--gray-border);
+    border-radius: 6px;
+    background-color: var(--white);
+    font-family: var(--font-family);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-google img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.btn-google:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.btn-email {
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--accent-orange);
+    color: var(--white);
+    font-family: var(--font-family);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-email:hover {
+    background-color: #c4470d;
+    transform: translateY(-2px);
+}
+
+.terms-text {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.terms-text a {
+    color: var(--accent-orange);
+}
+
+.terms-text a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.text-input {
+    width: 100%;
+    padding: 0.9rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--gray-border);
+    border-radius: 6px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.text-input:focus {
+    border-color: var(--accent-orange);
+}
+
+/* ==================== CONTACT PAGE ==================== */
+.contact-container {
+    display: flex;
+    padding: 4rem 8rem;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.showcase-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.devices-mockup {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transform: perspective(800px) rotateY(10deg);
+    transition: transform 0.5s ease;
+}
+
+.devices-mockup:hover {
+    transform: perspective(800px) rotateY(0deg);
+}
+
+.form-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-card {
+    background: linear-gradient(145deg, #df2a2c, #a81c1c);
+    padding: 3rem;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 20px 40px rgba(204, 37, 39, 0.4);
+    color: var(--white);
+}
+
+.contact-card h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.contact-input,
+.contact-textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    outline: none;
+    background-color: var(--white);
+}
+
+.contact-textarea {
+    resize: none;
+    height: 120px;
+}
+
+.btn-black {
+    width: 100%;
+    padding: 1rem;
+    background-color: #000;
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-black:hover {
+    background-color: #222;
+    transform: translateY(-2px);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 1.5rem 2rem;
+    }
+    .contact-container {
+        padding: 2rem 4rem;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide for mobile demo */
+    }
+    .motivation-container {
+        flex-direction: column;
+    }
+    .image-column {
+        display: none;
+    }
+    .center-column {
+        padding: 2rem;
+    }
+}
