@@ -37,3 +37,9 @@ def get_user_timeseries(user_id: str, days: int = 30):
         |> pivot(rowKey:["_time"], columnKey:["_field"], valueColumn:"_value")
     '''
     return query_api.query_data_frame(query)
+# app/services/wearable_ingest.py
+client = InfluxDBClient(
+    url="http://localhost:8086",   # ← self-hosted, no dependency
+    token="YOUR_TOKEN",            # ← this token is just a local password
+    org="health-twin"
+)

@@ -1,20 +1,33 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from app.api import health, auth, profile, twin
+from app.core.database import engine, Base
 
-from app.api.health import router as health_router
-from app.api.auth import router as auth_router
-from app.api.profile import router as profile_router
+Base.metadata.create_all(bind=engine)
 
-app = FastAPI()
+app = FastAPI(title="Health Digital Twin API", version="1.0")
 
-app.include_router(auth_router, prefix="/auth")
-app.include_router(health_router, prefix="/health")
-app.include_router(profile_router, prefix="/profile")
-
+# CORS — allows frontend/mobile to call your API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Register all route groups
+app.include_router(auth.router)
+app.include_router(health.router)
+app.include_router(profile.router)
+app.include_router(twin.router)
+
+# Global error handler
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    return JSONResponse(status_code=500, content={"error": str(exc)})
+
+@app.get("/")
+def root():
+    return {"status": "Health Digital Twin API is running"}
