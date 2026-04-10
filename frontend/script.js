@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // Toggle Login / Signup forms on Motivation Page
     const loginToggle = document.getElementById('loginToggle');
     if (loginToggle) {
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const loginForm = document.getElementById('loginForm');
             const signupForm = document.getElementById('signupForm');
-            
+
             if (loginForm.classList.contains('hidden')) {
                 loginForm.classList.remove('hidden');
                 signupForm.classList.add('hidden');
@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (submitLoginBtn) {
         submitLoginBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            
+
             const emailInput = document.querySelector('#loginForm input[type="email"]');
             const passInput = document.querySelector('#loginForm input[type="password"]');
-            
+
             if (!emailInput.value || !passInput.value) {
                 alert("Please enter both email and password.");
                 return;
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitLoginBtn.textContent = 'Authenticating...';
             submitLoginBtn.style.opacity = '0.7';
             submitLoginBtn.style.cursor = 'wait';
-            
+
             setTimeout(() => {
                 // Generate a mock auth token
                 const token = 'vayura-auth-token-' + Math.random().toString(36).substr(2, 9);
@@ -85,15 +85,15 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const btn = contactForm.querySelector('.btn-black');
             const originalText = btn.textContent;
-            
+
             btn.textContent = 'Sending...';
             btn.style.opacity = '0.7';
-            
+
             setTimeout(() => {
                 btn.textContent = 'Sent Successfully!';
                 btn.style.backgroundColor = '#1dd1a1';
                 contactForm.reset();
-                
+
                 setTimeout(() => {
                     btn.textContent = originalText;
                     btn.style.backgroundColor = '#000';
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        
+
         setTimeout(() => {
             el.style.opacity = '1';
             el.style.transform = 'translateY(0)';
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const loginToggle = document.getElementById('loginToggle');
             if (loginToggle) {
                 loginToggle.click(); // Switches view to email inputs
-                
+
                 // Change button text dynamically to indicate Sign Up flow
                 const submitBtn = document.getElementById('submitLoginBtn');
                 if (submitBtn) {

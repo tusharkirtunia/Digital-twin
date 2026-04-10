@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="logo">
@@ -32,10 +34,12 @@
         <div class="center-column">
             <div class="auth-box">
                 <h1>Motivation</h1>
-                <p class="subtitle">Track your progress and cheer each other on.<br>Join over 100 million active people for free.</p>
+                <p class="subtitle">Track your progress and cheer each other on.<br>Join over 100 million active people
+                    for free.</p>
 
                 <div class="auth-section">
-                    <p class="member-text">Already a Member? <a href="#" class="link-login" id="loginToggle">Log In</a></p>
+                    <p class="member-text">Already a Member? <a href="#" class="link-login" id="loginToggle">Log In</a>
+                    </p>
 
                     <div id="signupForm">
                         <button class="btn-google">
@@ -51,7 +55,8 @@
                         <button class="btn-email" id="submitLoginBtn">Log In to Platform</button>
                     </div>
 
-                    <p class="terms-text">By continuing, you are agreeing to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+                    <p class="terms-text">By continuing, you are agreeing to our <a href="#">Terms of Service</a> and <a
+                            href="#">Privacy Policy</a>.</p>
                 </div>
             </div>
         </div>
@@ -60,6 +65,27 @@
             <!-- Right Image: Sunset Runner -->
         </div>
     </main>
+
+    <main class="contact-container">
+        <div class="showcase-column">
+            <img src="assets/fitness_devices.png" class="devices-mockup" alt="Fitness Devices Mockup">
+        </div>
+
+        <div class="form-column">
+            <div class="contact-card">
+                <h2>Contact Us</h2>
+                <form id="contactForm">
+                    <input type="text" placeholder="Full Name" class="contact-input" required>
+                    <input type="email" placeholder="Email Address" class="contact-input" required>
+                    <input type="text" placeholder="Subject" class="contact-input" required>
+                    <textarea placeholder="Your Message" class="contact-textarea" required></textarea>
+                    <button type="submit" class="btn-black">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
     <script src="script.js"></script>
 </body>
+
 </html>

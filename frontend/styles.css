@@ -1,5 +1,6 @@
 :root {
-    --primary-color: #2e6274; /* teal from logo */
+    --primary-color: #2e6274;
+    /* teal from logo */
     --accent-orange: #d95311;
     --red-bg: #cc2527;
     --text-dark: #222;
@@ -39,7 +40,7 @@ a {
     border-bottom: 1px solid #f0f0f0;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 999;
 }
 
 .logo a {
@@ -156,7 +157,7 @@ a {
 
 .btn-google:hover {
     background-color: #f9f9f9;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .btn-email {
@@ -231,7 +232,7 @@ a {
 .devices-mockup {
     max-width: 100%;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     transform: perspective(800px) rotateY(10deg);
     transition: transform 0.5s ease;
 }
@@ -304,6 +305,7 @@ a {
     .navbar {
         padding: 1.5rem 2rem;
     }
+
     .contact-container {
         padding: 2rem 4rem;
         flex-direction: column;
@@ -312,14 +314,18 @@ a {
 
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Hide for mobile demo */
+        display: none;
+        /* Hide for mobile demo */
     }
+
     .motivation-container {
         flex-direction: column;
     }
+
     .image-column {
         display: none;
     }
+
     .center-column {
         padding: 2rem;
     }
