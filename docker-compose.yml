@@ -1,0 +1,33 @@
+# docker-compose.yml
+version: "3.9"
+services:
+  api:
+    build: .
+    ports: ["8000:8000"]
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    depends_on: [postgres, redis, influxdb, rabbitmq]
+
+  worker:
+    build: .
+    command: celery -A app.workers.tasks worker --loglevel=info
+    depends_on: [redis, rabbitmq]
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: healthtwin
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secret
+    ports: ["5432:5432"]
+
+  influxdb:
+    image: influxdb:2.7
+    ports: ["8086:8086"]
+
+  redis:
+    image: redis:7
+    ports: ["6379:6379"]
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports: ["5672:5672", "15672:15672"]
