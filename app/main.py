@@ -1,7 +1,10 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-from app.api import health, auth, profile, twin
+from app.api.api.api.health import router as health_router
+from app.api.api.api.auth import router as auth_router
+from app.api.api.api.profile import router as profile_router
+from app.api.api.api.twin import router as twin_router
 from app.core.database import engine, Base
 
 Base.metadata.create_all(bind=engine)
@@ -18,10 +21,10 @@ app.add_middleware(
 )
 
 # Register all route groups
-app.include_router(auth.router)
-app.include_router(health.router)
-app.include_router(profile.router)
-app.include_router(twin.router)
+app.include_router(auth_router)
+app.include_router(health_router)
+app.include_router(profile_router)
+app.include_router(twin_router)
 
 # Global error handler
 @app.exception_handler(Exception)

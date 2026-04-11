@@ -1,7 +1,7 @@
 # app/api/routes/health.py
 from fastapi import APIRouter, Depends, HTTPException
 from app.services.wearable_ingest import ingest_wearable_data, get_user_timeseries
-from app.ml.health_predictor import HealthTwinPredictor
+
 from app.core.auth import get_current_user
 import joblib, os
 
@@ -27,9 +27,9 @@ async def predict_risk(risk_type: str, current_user=Depends(get_current_user)):
     if not os.path.exists(model_path):
         raise HTTPException(status_code=404, detail="Twin not trained yet")
     
-    predictor: HealthTwinPredictor = joblib.load(model_path)
-    result = predictor.predict_risk(df)
-    return result
+    
+    
+    
 
 @router.post("/simulate")
 async def simulate_whatif(payload: dict, current_user=Depends(get_current_user)):
@@ -41,9 +41,9 @@ async def simulate_whatif(payload: dict, current_user=Depends(get_current_user))
     """
     df = get_user_timeseries(str(current_user.id), days=30)
     model_path = f"models/{current_user.id}_{payload['risk_type']}.pkl"
-    predictor: HealthTwinPredictor = joblib.load(model_path)
-    result = predictor.simulate_scenario(df, payload["changes"])
-    return result
+
+    
+    
 
 @router.get("/insights")
 async def get_insights(current_user=Depends(get_current_user)):
